@@ -5,7 +5,7 @@
       <v-row>
         <v-col
           cols="12"
-          md="4"
+
         >
           <v-text-field
             v-model="form.email"
@@ -17,7 +17,7 @@
 
          <v-col
           cols="12"
-          md="4"
+
         >
           <v-text-field
             v-model="form.password"
@@ -29,12 +29,21 @@
 
         <v-col
           cols="12"
-          md="4"
+
         >
             <v-btn
-            color="green"
+            color=#03a9f4
             type="submit"
+            class="white--text"
             >Login</v-btn>
+
+            <router-link to="/signup">
+                <v-btn
+                color=#8bc34a
+                class="white--text"
+                >Sign Up</v-btn>
+            </router-link>
+
         </v-col>
       </v-row>
     </v-container>
@@ -51,6 +60,11 @@ export default {
                 password:null
             }
         }
+    },
+    created(){
+       if(User.loggedIn()){
+           this.$router.push({name:'forum'})
+       }
     },
     methods:{
         login(){
