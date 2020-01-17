@@ -9,8 +9,19 @@ require('./bootstrap');
 window.Vue = require('vue');
 import Vue from 'vue';
 import Vuetify from 'vuetify';
+import 'material-design-icons-iconfont/dist/material-design-icons.css'
 
 Vue.use(Vuetify);
+
+
+import VueSimplemde from 'vue-simplemde'
+import 'simplemde/dist/simplemde.min.css'
+
+Vue.component('vue-simplemde', VueSimplemde)
+
+import md from 'marked'
+window.md = md
+
 
 import User from './Helpers/User.js';
 window.User = User;
