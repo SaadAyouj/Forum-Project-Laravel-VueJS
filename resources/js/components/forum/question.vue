@@ -14,15 +14,18 @@
         <div><span class="grey--text">{{data.created_at}}</span><b> by {{data.user}}</b></div>
     </v-card-subtitle>
 
-    <v-card-text>
-      {{data.body}}
-    </v-card-text>
+    <v-card-text v-html="body"></v-card-text>
   </v-card>
 </template>
 
 <script>
 export default {
-    props:['data']
+    props:['data'],
+    computed:{
+        body(){
+            return md.parse(this.data.body)
+        }
+    },
 }
 </script>
 

@@ -102,8 +102,10 @@ export default {
             .then(res => {
                 User.responseAfterLogin(res)
                 this.$router.push({name:'forum'})
+                this.$noty.info("Welcome to my forum, your account has been successfully created !")
                 })
-            .catch(error => this.errors = error.response.data.errors)
+            .catch(error => {this.errors = error.response.data.errors
+            this.$noty.error("Oops, something went wrong!")})
         }
     }
 }

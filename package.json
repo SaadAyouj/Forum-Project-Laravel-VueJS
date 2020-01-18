@@ -25,10 +25,12 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
+        "@mojs/core": "^0.288.2",
         "material-design-icons-iconfont": "^5.0.1",
         "simplemde-theme-base": "^0.2.1",
         "vue-router": "^3.1.3",
         "vue-simplemde": "^1.0.4",
+        "vuejs-noty": "^0.1.3",
         "vuetify": "^2.2.3"
     }
 }

@@ -73,9 +73,11 @@ export default {
             axios.post('/api/category',this.form)
             .then(res => {this.categories.unshift(res.data)
             this.form.name=null
+            this.$noty.success("Your category has been <b>added</b>!")
             })
             .catch(err => {
                 console.error(err);
+                this.$noty.error("Oops, something went wrong!")
             })
         },
         update(){
@@ -83,14 +85,18 @@ export default {
             .then(res => {this.categories.unshift(res.data)
             this.form.name=null
             this.editSlug=null
+            this.$noty.success("Your category has been <b>updated</b>!")
             })
             .catch(err => {
                 console.error(err);
+                this.$noty.error("Oops, something went wrong!")
             })
         },
         destroy(slug, index){
             axios.delete(`/api/category/${slug}`)
-            .then(res => this.categories.splice(index,1))
+            .then(res => {this.categories.splice(index,1)
+            this.$noty.warning("Your catagory has been <b>deleted</b>.")
+            })
         },
         edit(index){
             this.form.name=this.categories[index].name

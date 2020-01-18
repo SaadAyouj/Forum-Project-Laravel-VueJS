@@ -48,9 +48,11 @@ export default {
         },
         update(){
             axios.patch(`/api/question/${this.form.slug}`,this.form)
-            .then(res => this.cancel())
+            .then(res => {this.cancel()
+            this.$noty.success("Your question has been <b>updated</b>!")})
             .catch(err => {
                 console.error(err);
+                this.$noty.error("Oops, something went wrong!")
             })
         }
     },

@@ -1,5 +1,6 @@
 <template>
-    <v-card outlined>
+<v-container>
+    <v-card tile>
         <v-container fluid>
             <div>
                 <v-card-title>
@@ -10,8 +11,8 @@
 
                 <v-spacer></v-spacer>
 
-                <v-btn color="teal">
-                    5 Replies
+                <v-btn color="teal white--text">
+                    {{data.reply_count}} Replies
                 </v-btn>
                 </v-card-title>
 
@@ -33,6 +34,7 @@
         </v-card-actions>
         </v-container>
     </v-card>
+    </v-container>
 </template>
 
 <script>
@@ -40,7 +42,7 @@ export default {
     props:['data'],
     data(){
         return{
-            own: User.own(this.data.user_id)
+            own: User.own(this.data.user_id),
         }
     },
     computed:{
@@ -51,7 +53,8 @@ export default {
     methods:{
         destroy(){
             axios.delete(`/api/question/${this.data.slug}`)
-            .then(res => this.$router.push('/forum'))
+            .then(res => {this.$router.push('/forum')
+            this.$noty.warning("Your question has been <b>deleted</b>")})
             .catch(error => console.log(error.reponse.data))
         },
         edit(){

@@ -5,10 +5,13 @@
         :data = question
         ></edit-question>
 
-            <show-question
-            v-else
-            :data = question
-            ></show-question>
+        <show-question
+        v-else
+        :data = question
+        ></show-question>
+
+        <replies :question="question"></replies>
+        <new-reply :questionSlug = "question.slug"></new-reply>
     </div>
 
 </template>
@@ -17,8 +20,10 @@
 
 import ShowQuestion from './ShowQuestion'
 import EditQuestion from './editQuestion'
+import Replies from '../reply/replies'
+import newReply from '../reply/newReply'
 export default {
-    components:{ShowQuestion,EditQuestion},
+    components:{ShowQuestion,EditQuestion,Replies,newReply},
     data(){
         return{
             question:null,
