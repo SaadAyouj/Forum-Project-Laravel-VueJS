@@ -39,7 +39,7 @@
 
         >
             <v-btn
-            color=#03a9f4
+            color=blue
             type="submit"
             class="white--text"
             >Post</v-btn>

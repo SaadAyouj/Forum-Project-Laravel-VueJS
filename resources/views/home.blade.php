@@ -10,7 +10,7 @@
 </head>
 <body>
     <div id="app">
-        <v-app>
+        <v-app style="background:#d3d3d3">
             <app-home></app-home>
         </v-app>
     </div>

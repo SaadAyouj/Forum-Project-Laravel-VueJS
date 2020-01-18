@@ -1,9 +1,9 @@
 <template>
-  <v-card raised id="card">
+  <v-card raised id="card" dark>
     <v-card-title primary-title>
         <div>
             <h3 class="headline mb-0">
-                <router-link :to="data.path">
+                <router-link :to="data.path" id="color">
                     {{data.title}}
                 </router-link>
             </h3>
@@ -30,5 +30,9 @@ export default {
 #card{
     margin-top: 25px;
     margin-bottom: 15px;
+}
+#color{
+    color: rgb(21, 142, 255);
+    font-weight: bold;
 }
 </style>

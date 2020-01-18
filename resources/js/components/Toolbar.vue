@@ -1,7 +1,9 @@
 <template>
   <div>
-    <v-toolbar>
-      <v-toolbar-title>Forum F.A</v-toolbar-title>
+    <v-toolbar dark>
+      <v-toolbar-title>
+          <router-link class="white--text" to="/">S.A Forum</router-link>
+      </v-toolbar-title>
 
       <v-spacer></v-spacer>
 
@@ -28,7 +30,7 @@ export default {
             items: [
                 {'title' : 'Forum', to:'/forum',show:true},
                 {'title' : 'Ask a Question', to:'/ask',show: User.loggedIn()},
-                {'title' : 'Create Your Category', to:'/category',show: User.loggedIn()},
+                {'title' : 'Create a Category', to:'/category',show: User.admin()},
                 {'title' : 'Login', to:'/login',show: !User.loggedIn()},
                 {'title' : 'Logout', to:'/logout',show: User.loggedIn()},
             ]
