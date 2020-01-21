@@ -7,7 +7,7 @@
 
       <v-spacer></v-spacer>
 
-      <app-notification></app-notification>
+      <app-notification v-if="loggedIn"></app-notification>
 
       <div>
 
@@ -31,6 +31,7 @@ export default {
     components:{AppNotification},
     data(){
         return {
+            loggedIn: User.loggedIn(),
             items: [
                 {'title' : 'Forum', to:'/forum',show:true},
                 {'title' : 'Ask a Question', to:'/ask',show: User.loggedIn()},
