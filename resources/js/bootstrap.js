@@ -39,5 +39,10 @@ window.Echo = new Echo({
     broadcaster: 'pusher',
     key: "84b61b698b008b16e688",
     cluster: "eu",
-    encrypted: true
+    encrypted: true,
+    auth:{
+        headers:{
+            Authorization:JWTtoken
+        }
+    }
 });
